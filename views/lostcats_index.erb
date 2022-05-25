@@ -1,0 +1,27 @@
+<h1>Cats</h1>
+
+<% if cats.empty?%>
+  There are no lost cats
+  <br>
+<% else %>
+  <% cats.each_with_index do |cat, index| %>
+    <article>
+      <h2><%= h cat.name %></h2>
+      <p><%= h cat.breed %></p>
+      <p><%= h cat.tel %></p>
+
+      <a href="/lostcats/<%= index %>/edit" id="edit_<%= index %>">
+      <button>Edit Entry</button>
+      </a>
+
+      <form action="/lostcats/<%= index %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button id="delete_<%= index %>">Delete</button>
+      </form> 
+
+    </article>
+  <%end%>
+<%end%>
+<p>
+<a href="/lostcats/new">Add Cat</a>
+</p>

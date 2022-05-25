@@ -1,0 +1,22 @@
+<h1>Edit Cat</h1>
+
+<form action="/lostcats/<%= index %>" method="POST">
+
+  <input type="hidden" name="_method" value="PATCH">
+  <p>
+    <label for="name">Name</label>
+  <br>
+    <input type="text" id="name" name="name" value="<%= hattr cats.name %>">
+  </p>
+  <p>
+    <label for="breed">Breed</label>
+  <br>
+    <input type="text" id="breed" name="breed" value="<%= hattr cats.breed %>">
+  </p>
+  <p>
+    <label for="tel">Tel</label>
+  <br>
+    <input type="text" id="tel" name="tel" value="<%= hattr cats.tel %>">
+  </p>
+  <input type="submit" value="Update">
+</form>
